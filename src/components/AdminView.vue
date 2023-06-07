@@ -22,10 +22,23 @@ export default {
         title: this.title,
         image: this.image,
         description: this.description
-      });
+      });      
     }
   }
 };
 </script>
 
-<style></style>
+<style>
+button {
+  background-color: #F9BB62;
+  border-radius: 5px;
+  color: white;
+  padding: 3px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border: none;
+  margin-left: 15px;
+}
+</style>

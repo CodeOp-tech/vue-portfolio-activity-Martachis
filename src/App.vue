@@ -1,12 +1,14 @@
 <template>
   <div>
     <h1>Hello World</h1>
-    <button @click="isAdmin = true">ADMIN</button>
-    <button @click="isAdmin = false">USER</button>
+    <button @click="isAdmin = true" :class="{ 'color-admin-button': isAdmin === true}">ADMIN</button>
+    <button @click="isAdmin = false" :class="{ 'color-user-button': isAdmin === false}">USER</button>
     <admin-view v-if="isAdmin" @createProject="addProject" />
     <user-view v-else />
+
   </div>
 </template>
+
 
 <script>
 import AdminView from "./components/AdminView.vue";
@@ -32,4 +34,6 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+  @import './styles.css';
+</style>
