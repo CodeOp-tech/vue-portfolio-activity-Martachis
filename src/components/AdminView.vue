@@ -1,23 +1,23 @@
 <template>
   <div>
     <h2>CREATE NEW PROJECT</h2>
-    <form class="form" @submit.prevent="handleSubmit" @createProject="handleSubmit">
+    <form class="form" @submit.prevent="handleSubmit">
         <div class="title-url-fields">
 
           <div class="text-field">
             <label htmlForm="project-title">Project title</label>
-            <input id="project-title" type="text" name="project-title" v-model="title" />
+            <input id="project-title" type="text" name="project-title" v-model="project.title" />
           </div>
 
           <div class="text-field">
             <label htmlForm="project-url">Image URL</label>
-            <input id="project-url" type="url" name="project-url" v-model="image" />
+            <input id="project-url" type="url" name="project-url" v-model="project.image" />
           </div>
 
         </div>
         <div class="text-field">
             <label htmlForm="project-decription">Project Description</label>
-            <input id="project-decription" type="text" name="project-decription" v-model="description" />
+            <input id="project-decription" type="text" name="project-decription" v-model="project.description" />
         </div>
         <div class="button-cointainer">
           <button type="submit">SUBMIT</button>
@@ -45,16 +45,16 @@ export default {
   methods: {
     handleSubmit() {  
       this.$emit("createProject", {
-        title: this.title,
-        image: this.image,
-        description: this.description,
+        title: this.project.title,
+        image: this.project.image,
+        description: this.project.description,
       });
       this.reset();
     },
     reset() {
-      this.title= "";
-      this.image= "";
-      this.description= "";
+      this.project.title= "";
+      this.project.image= "";
+      this.project.description= "";
     }
   }
 };

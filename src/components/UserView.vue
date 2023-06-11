@@ -10,17 +10,27 @@ import ProjectGrid from "./ProjectGrid.vue";
 
 export default {
   name: "UserView",
+  props: {
+    projects: Array
+  },
   components: {
     projectGrid: ProjectGrid,
-  },
-  data (){
-    return {
-      projects: [],
-    }
   },
 };
 
 
 </script>
 
-<style></style>
+<style>
+
+h2{
+  font-family: monospace;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #F9BB62;
+  margin-bottom: 30px;
+  font-size: 30px;
+}
+
+</style>

@@ -13,10 +13,10 @@
   
 <template>
     <div v-if="projects.length > 0" class="grid">
-        <article v-for="project in projects" :key="project.name">
-            <h2>{{ project.name }}</h2>
-            <image :src="project.image" :alt="project.name"/>
-            <p>{{ project.description }}</p>
+        <article class="grid-item" v-for="project in projects" :key="project.title">
+            <img class="project-image" :src="project.image" :alt="project.title"/>
+            <h2 class="project-title">{{ project.title }}</h2>
+            <p class="project-description">{{ project.description }}</p>
         </article>
     </div>
     <div class="empty-state" v-else>
@@ -37,6 +37,8 @@
     width: 100%;
     margin: 0px;
     flex: 1;
+    padding: 15px;
+    align-items: start;
 }
 
 .empty-state{
@@ -47,6 +49,31 @@
 .title-empty-state{
     color: #4CAF50;
     font-size: 30px;
+}
+
+.project-title{
+    max-width: 200px; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.project-image{
+    aspect-ratio: 1;
+    width: 100%;
+    border-radius: 16px;
+    object-fit: cover;
+    max-height: 200px;
+    max-width: 200px;
+}
+
+.project-description{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    max-width: 200px; 
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 </style>
   
