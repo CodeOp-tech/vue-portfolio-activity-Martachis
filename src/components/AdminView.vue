@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2>CREATE NEW PROJECT</h2>
-    <form>
+    <form class="form" @submit.prevent="handleSubmit" @createProject="handleSubmit">
         <div class="title-url-fields">
 
           <div class="text-field">
@@ -20,7 +20,7 @@
             <input id="project-decription" type="text" name="project-decription" v-model="description" />
         </div>
         <div class="button-cointainer">
-          <button type="submit" @click="handleSubmit">SUBMIT</button>
+          <button type="submit">SUBMIT</button>
         </div>
     </form>
   </div>
@@ -34,18 +34,27 @@ export default {
   name: "AdminView",
   data() {
     return {
+      project : {
       title: "",
       image: "",
       description: ""
+      }
     };
   },
+
   methods: {
-    handleSubmit() {
+    handleSubmit() {  
       this.$emit("createProject", {
         title: this.title,
         image: this.image,
-        description: this.description
-      });      
+        description: this.description,
+      });
+      this.reset();
+    },
+    reset() {
+      this.title= "";
+      this.image= "";
+      this.description= "";
     }
   }
 };

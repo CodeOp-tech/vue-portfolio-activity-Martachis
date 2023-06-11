@@ -6,7 +6,7 @@
       <button @click="isAdmin = false" :class="{ 'color-user-button': isAdmin === false}">USER</button>
     </div>
     <admin-view v-if="isAdmin" @createProject="addProject" />
-    <user-view v-else />
+    <user-view v-else :projects="allProjects" />
 
   </div>
 </template>
@@ -20,7 +20,7 @@ export default {
   name: "app",
   components: {
     userView: UserView,
-    adminView: AdminView
+    adminView: AdminView,
   },
   data() {
     return {
