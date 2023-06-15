@@ -1,18 +1,19 @@
 <script> 
   export default {
     name: "ProjectDetailSection",
+    props: ["project"]
   };
 
 </script>
   
 <template>
     <section class="detail-section">
-        <img class="detail-section-img" src="https://img.freepik.com/foto-gratis/fascinante-vista-montana-sassolungo-italia_181624-42103.jpg?size=626&ext=jpg&ga=GA1.1.552403742.1686160954&semt=sph"
-        alt="Paisaje"/>
+        <img class="detail-section-img" :src="project.image"
+        :alt="project.title"/>
 
         <div class="detail-information">
-            <h2 class="detail-information-title">Proyecto 1</h2>
-            <p class="detail-information-description">Descripcion</p>
+            <h2 class="detail-information-title">{{project.title}}</h2>
+            <p class="detail-information-description">Description: {{project.description}}</p>
         </div>
     </section>
 </template>
@@ -31,7 +32,7 @@
   padding-bottom: 15px;
   border-radius: 15px;
   box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-
+  margin-bottom: 40px;
 }
 
 .detail-section-img {

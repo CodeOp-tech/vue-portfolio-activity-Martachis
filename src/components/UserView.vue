@@ -2,7 +2,7 @@
   <div>
     <h2>User View</h2>
     <project-detail-section v-if="selected !== null" :project="selected"/>
-    <project-grid :projects="projects" />
+    <project-grid :projects="projects" @select="handleSelect"/>
   </div>
 </template>
 
@@ -25,8 +25,8 @@ export default {
     };
   },
   methods: {
-    handleSelect () {
-
+    handleSelect (project) {
+      this.selected = project;
     }
   }
 };

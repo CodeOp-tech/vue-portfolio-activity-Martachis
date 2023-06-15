@@ -6,7 +6,7 @@
       <button @click="isAdmin = false" :class="{ 'color-user-button': isAdmin === false}">USER</button>
     </div>
     <admin-view v-if="isAdmin" @createProject="addProject" />
-    <user-view v-else :projects="allProjects" />
+    <user-view v-else :projects="allProjects" @selectProject="handleProjectSelect"/>
 
   </div>
 </template>
@@ -32,6 +32,9 @@ export default {
     addProject(project) {
       this.allProjects.push(project);
     },
+    handleProjectSelect(project) {
+    // Realiza las acciones necesarias con el proyecto seleccionado
+  }
   },
 };
 </script>
