@@ -31,8 +31,8 @@ export default {
   methods: {
     addProject(project) {
       this.allProjects.push(project);
-    }
-  }
+    },
+  },
 };
 </script>
 

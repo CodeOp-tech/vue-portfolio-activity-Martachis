@@ -6,6 +6,11 @@
         type: Array,
         default: () => [],
         }
+    },
+    metthods: {
+        handleClick () {
+            console.log(Hello);
+        }
     }
   };
 
@@ -13,7 +18,7 @@
   
 <template>
     <div v-if="projects.length > 0" class="grid">
-        <article class="grid-item" v-for="project in projects" :key="project.title">
+        <article class="grid-item" @click="handleClick" v-for="project in projects" :key="project.title">
             <img class="project-image" :src="project.image" :alt="project.title"/>
             <h2 class="project-title">{{ project.title }}</h2>
             <p class="project-description">{{ project.description }}</p>

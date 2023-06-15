@@ -1,12 +1,14 @@
 <template>
   <div>
     <h2>User View</h2>
+    <project-detail-section v-if="selected !== null" :project="selected"/>
     <project-grid :projects="projects" />
   </div>
 </template>
 
 <script>
 import ProjectGrid from "./ProjectGrid.vue";
+import ProjectDetailSection from "./ProjectDetailSection.vue"
 
 export default {
   name: "UserView",
@@ -15,7 +17,18 @@ export default {
   },
   components: {
     projectGrid: ProjectGrid,
+    projectDetailSection: ProjectDetailSection,
   },
+  data() {
+    return {
+      selected: null,
+    };
+  },
+  methods: {
+    handleSelect () {
+
+    }
+  }
 };
 
 
